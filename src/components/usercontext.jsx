@@ -1,28 +1,31 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// Create the Context
-const UserContext = createContext(null);
+const UserContext = createContext();
 
-// Create the Provider Component
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Initial user is null (not logged in)
+  // 1. Initialize state by checking localStorage first
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('app_user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
-  // Function to log in
-  const loginUser = (userData) => {
+  // 2. The Login function saves to State AND LocalStorage
+  const login = (userData) => {
     setUser(userData);
+    localStorage.setItem('app_user', JSON.stringify(userData));
   };
 
-  // Function to log out
-  const logoutUser = () => {
+  // 3. The Logout function clears both
+  const logout = () => {
     setUser(null);
+    localStorage.removeItem('app_user');
   };
 
   return (
-    <UserContext.Provider value={{ user, loginUser, logoutUser }}>
+    <UserContext.Provider value={{ user, login, logout }}>
       {children}
     </UserContext.Provider>
   );
 };
 
-// Custom hook to use the context easily
 export const useUser = () => useContext(UserContext);

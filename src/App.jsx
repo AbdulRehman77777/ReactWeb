@@ -14,13 +14,17 @@ const ProtectedLayout = () => {
   if (!user) return <Navigate to="/login" />;
 
   return (
-    <div className="main-layout">
+    <>
+      {/* 1. Header sits here (Full Width) */}
       <Header />
-      {/* Outlet renders ONLY the page that matches the URL (Dashboard, Profile, etc.) */}
-      <div className="page-content">
-        <Outlet />
+
+      {/* 2. The rest of the page sits inside the centered layout */}
+      <div className="main-layout">
+        <div className="page-content">
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
