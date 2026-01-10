@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from '../components/UserContext';
+import { useUser } from '../components/usercontext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   User as UserIcon, 
