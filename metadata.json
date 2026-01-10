@@ -1,0 +1,7 @@
+{
+  "name": "Lumina OS - Professional Enterprise Suite",
+  "description": "A high-performance, aesthetically pleasing management dashboard with real-time data visualization and modern glassmorphism design.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
