@@ -1,9 +1,10 @@
-
 import React from 'react';
-// Fix: Use correct casing for UserContext
-import { useUser } from '../components/UserContext';
+// FIX: Change 'UserContext' to 'usercontext' to match App.tsx
+import { useUser } from '../components/usercontext'; 
 import { motion } from 'framer-motion';
 import { Shield, Smartphone, Globe, Mail, MapPin, Camera } from 'lucide-react';
+
+// ... rest of your Profile code ...
 
 const Profile = () => {
   const { user } = useUser();

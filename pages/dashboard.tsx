@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useUser } from '../components/UserContext';
+import { useUser } from '../components/usercontext';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { motion } from 'framer-motion';
 import { TrendingUp, Activity, Users, CreditCard, ArrowUpRight, Loader2 } from 'lucide-react';

@@ -1,9 +1,12 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom';
 import { UserProvider, useUser } from './components/usercontext';
 import Sidebar from './components/Sidebar';
-import Login from './pages/Login'; // <--- Change to Uppercase 'L'
+
+// 1. IMPORT MUST BE UPPERCASE 'Login'
+// Even though the file is lowercase './pages/login', we name the variable Uppercase 'Login'
+import Login from './pages/login'; 
+
 import Dashboard from './pages/dashboard';
 import Profile from './pages/profile';
 import About from './pages/about';
@@ -43,7 +46,10 @@ function App() {
     <UserProvider>
       <HashRouter>
         <Routes>
+          {/* 2. COMPONENT USAGE MUST BE UPPERCASE <Login /> */}
+          {/* The error 'login is not defined' happened here because you had <login /> */}
           <Route path="/Login" element={<Login />} />
+          
           <Route element={<ProtectedLayout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />

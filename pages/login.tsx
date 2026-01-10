@@ -198,4 +198,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default login;
+export default Login;
