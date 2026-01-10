@@ -21,7 +21,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const { Login } = useUser();
+  const { login } = useUser();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
     setIsSuccess(true);
     
     setTimeout(() => {
-      Login({ name, email });
+      login({ name, email });
       navigate('/');
     }, 800);
   };
