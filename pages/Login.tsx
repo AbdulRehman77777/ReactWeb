@@ -36,7 +36,7 @@ const Login: React.FC = () => {
     setIsSuccess(true);
     
     setTimeout(() => {
-      login({ name, email });
+      Login({ name, email });
       navigate('/');
     }, 800);
   };
