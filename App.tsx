@@ -3,7 +3,7 @@ import React from 'react';
 import { HashRouter, Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom';
 import { UserProvider, useUser } from './components/usercontext';
 import Sidebar from './components/Sidebar';
-import Login from './pages/login';
+import Login from './pages/Login';
 import Dashboard from './pages/dashboard';
 import Profile from './pages/profile';
 import About from './pages/about';
