@@ -12,7 +12,7 @@ import {
   X
 } from 'lucide-react';
 // Fix: Use correct casing for UserContext
-import { useUser } from './UserContext';
+import { useUser } from './usercontext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Sidebar = () => {
