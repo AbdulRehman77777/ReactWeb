@@ -14,7 +14,7 @@ const ProtectedLayout = () => {
   const { user } = useUser();
   const location = useLocation();
   
-  if (!user) return <Navigate to="/login" replace />;
+  if (!user) return <Navigate to="/Login" replace />;
 
   return (
     <div className="flex min-h-screen bg-[#050505] text-white">
